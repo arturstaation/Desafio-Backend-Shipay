@@ -1,51 +1,66 @@
 # Backend Challenge Shipay
 
 ## Feito Por:
-Artur Valladares Hernandez Giacummo
+**Artur Valladares Hernandez Giacummo**
 
 ## Visão Geral
 
-Esse projeto visa estruturar uma API Rest usando Python para resolver os exercicios 3,4 e 5 propostos no desafio.
+Este projeto tem como objetivo estruturar uma API REST em Python para resolver os exercícios 3, 4 e 5 propostos no desafio da Shipay.
 
-## Endpoints Disponiveis
-/User : Metodo POST --> Fornecer no body da requisição um JSON com a seguinte estrutura:
+## 🧩 Endpoints Disponíveis
+
+### Criar Usuário
+**POST** `/user`  
+Body (JSON):
+```json
 {
-    "name": str
-    "email": str
-    "roleId: int
-    "password": str?
+  "name": "string",
+  "email": "string",
+  "roleId": int,
+  "password": "string (opcional)"
 }
-Caso não forneça uma senha, ela será gerada automaticamente -> Cria um novo usuario
+```
+- Se a senha não for fornecida, será gerada automaticamente.
+- Retorna se conseguiu cirar o usuario ou não
 
-/User/{userId}/Roles : Metodo GET -> fornecer o id do usuario no link -> Retorna o Role_Id do usuario em questão
+### Obter Role de um Usuário
+**GET** `/user/{userId}/roles`  
+- Forneça o ID do usuário na URL.
+- Retorna todos os `role_id` do usuário correspondente.
 
-## Estrutura do Projeto
+---
 
-Nessa seção será explicada a estrutura dos arquivos do projeto e o papel de cada um.
+## 🗂️ Estrutura do Projeto
 
 ```
 Desafio-Backend-Shipay/
 │
 ├── Controller/
-|    ├── __init__.py
-|    ├── UserController.py
+│   ├── __init__.py
+│   └── UserController.py
+│
 ├── Models/
-|   ├── __init__.py
-|   ├── Base.py
-|   ├── Claim.py
-|   ├── RequestResponse.py
-|   ├── Role.py
-|   ├── User.py
-|   ├── UserClaim.py
+│   ├── __init__.py
+│   ├── Base.py
+│   ├── Claim.py
+│   ├── RequestResponse.py
+│   ├── Role.py
+│   ├── User.py
+│   └── UserClaim.py
+│
 ├── Repository/
-|   ├── __init__.py
-|   ├── DatabaseRepository.py
+│   ├── __init__.py
+│   └── DatabaseRepository.py
+│
 ├── Services/
-|   ├── __init__.py
-|   ├── UserService.py
+│   ├── __init__.py
+│   └── UserService.py
+│
 ├── Utils/
-|   ├── __init__.py
-|   ├── StartDataBase.py
+│   ├── __init__.py
+│   ├── Logger.py
+│   └── StartDataBase.py
+│
 ├── main.py
 ├── requirements.txt
 ├── .gitignore
@@ -53,48 +68,77 @@ Desafio-Backend-Shipay/
 └── README.md
 ```
 
-## Como Rodar o Projeto
-### Configuração Banco SQL (Sugestão PostgresSQL)
-1. Faça download do PostgresSQL no link abaixo:
-https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+---
 
-2. Ao terminar o download, execute o instalador
-3. Na pagina "Setup - PostgresSQL", clique em "Next"
-4. Na pagina "Installation Directory", escolha o que mais te agrade, ou mantenha o padrão, então clique em "Next"
-5. Na pagina "Select Components", não mude nada e clique em Next"
-6. Na pagina "Data Directory", scolha o que mais te agrade, ou mantenha o padrão, então 
-7. Na pagina "Password", digite a senha que gostaria para que seu usuario possa acessar o bannco. **IMPORTANTE: Guarde essa senha, pois vamos usalá mais tarde**
-8. Na pagina "Port", escolha a porta que gostaria que o Postgres usasse, ou mantenha a padrão (5432), então clique em "Next" **IMPORTANTE: Guarde essa senha, pois vamos usalá mais tarde**
-9. Na pagina "Advanced Options" clique em "Next"
-10. Na pagina "Pre Installation Summary" clique em ""Next"
-11. Na pagina "Ready to Install" clique em "Next"
-12. Aguarde a instalação finalizar
-13. Na pagina "Completing the PostgresSQL Setup Wizard", pode desmarcar o radio e então clicar em "Finish"
+## ⚙️ Como Rodar o Projeto
 
-**OBS: Caso tenha ficado com alguma duvida, siga o passo a passo do video abaixo:**
-https://www.youtube.com/watch?v=4qH-7w5LZsA
+### 1. Configurar Banco de Dados PostgreSQL
 
-### Configuração Python
-1. Crie um arquivo .env e adicione o valor: 
-**Exemplo para PostgresSQL**
+1. Baixe o PostgreSQL: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads  
+2. Siga o instalador padrão e **anote sua senha e porta escolhidas**.
+2.1 Na pagina "Setup - PostgresSQL", clique em "Next"
+2.2 Na pagina "Installation Directory", escolha o que mais te agrade, ou mantenha o padrão, então clique em "Next"
+2.3 Na pagina "Select Components", não mude nada e clique em Next"
+2.5 Na pagina "Data Directory", scolha o que mais te agrade, ou mantenha o padrão, então 
+2.5 Na pagina "Password", digite a senha que gostaria para que seu usuario possa acessar o bannco. **IMPORTANTE: Guarde essa senha, pois vamos usalá mais tarde**
+2.6 Na pagina "Port", escolha a porta que gostaria que o Postgres usasse, ou mantenha a padrão (5432), então clique em "Next" **IMPORTANTE: Guarde essa senha, pois vamos usalá mais tarde**
+2.7 Na pagina "Advanced Options" clique em "Next"
+2.8 Na pagina "Pre Installation Summary" clique em ""Next"
+2.9 Na pagina "Ready to Install" clique em "Next"
+2.10 Aguarde a instalação finalizar
+2.11 Na pagina "Completing the PostgresSQL Setup Wizard", pode desmarcar o radio e então clicar em "Finish"
+3. Você pode usar o banco `postgres` padrão ou criar um novo.
+
+📺 *Dica*: [Veja esse vídeo passo-a-passo](https://www.youtube.com/watch?v=4qH-7w5LZsA)
+
+### 2. Configurar o Ambiente Python
+
+1. Clone o projeto usando a linha de comando
 ```
-DATABASE_URL: "postgresql://{usuario}:{senha}@{ip}:{port}/{db}" 
-Onde:
-usuario = usuario que pode acessar o banco (apos a instalação, existe um usuario padrão chamado postgres, mas , se quiser, fique a vontade para criar outro)
-senha = senha do usuario que pode acessar o banco (configurado na instalação)
-ip = IP em que o Postgres esta hospedado (se estiver rodando local, pode colocar o valor localhost)
-port = Porta em que o Postgres esta rodando (configurado na instalação)
-db = Nome do Banco de Dados (apos concluir a instalação, existe um banco padrão de nome postgres, mas se quiser fique a vontade para criar outro)
+git clone https://github.com/arturstaation/Desafio-Backend-Shipay.git
 ```
-2. Execute o seguinte comando:
+
+2. Crie um arquivo `.env` na raiz do projeto com o seguinte conteúdo:
+
+```env
+DATABASE_URL=postgresql://<usuario>:<senha>@<host>:<porta>/<database>
 ```
+
+3. Substitua os campos conforme abaixo:
+
+| Campo        | Descrição                                                                 |
+|--------------|---------------------------------------------------------------------------|
+| `<usuario>`  | Nome de usuário do seu banco de dados PostgreSQL.                         |
+| `<senha>`    | Senha do usuário do banco.                                                |
+| `<host>`     | Endereço do servidor (por exemplo: `localhost` ou um IP como `127.0.0.1`).|
+| `<porta>`    | Porta do PostgreSQL (geralmente `5432`).                           |
+| `<database>` | Nome do banco de dados que você criou (ex: `Teste`).                      |
+
+Exemplo real:
+```env
+DATABASE_URL=postgresql://postgres:123@localhost:5432/Teste
+```
+
+4. Instale as dependências:
+```bash
 pip install -r requirements.txt
 ```
 
-3. Com isso, tudo deve estar preparado para rodar o projeto. Então, basta executar o comando
-
-```
+5. Execute a aplicação:
+```bash
 python main.py
 ```
-## Testes e Resultados
-Para realizar os testes, usarei o Insonia para simular as chamadas HTTP para a API.
+
+---
+
+## 📌 Observações
+
+- As tabelas são criadas automaticamente com base nos modelos definidos em `Models/`.
+- Antes de realizar os testes, foi populada a tabela `roles` , ja que a tabela `users` usa uma chave estrangeira da tabela anterior. Exemplos:
+---
+
+## 🧪 Testes
+
+- Para testar, use o **Insomnia**, **Postman** ou qualquer ferramenta de requisições HTTP.
+
+---

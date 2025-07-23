@@ -1,3 +1,3 @@
 from .StartDataBase import createTabels
-
-__all__ = ['createTabels']
+from .Logger import getLogger
+__all__ = ['createTabels', 'getLogger']
