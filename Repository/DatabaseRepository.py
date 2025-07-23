@@ -5,14 +5,16 @@ from sqlalchemy.orm import sessionmaker
 import traceback
 from typing import List
 from Models import Base
+import os
 
-DATABASE_URL = "postgresql://postgres:123@localhost:5432/Teste"
 
 class DatabaseRepository:
 
     def __init__(self: Self):
         try:
-            engine = create_engine(DATABASE_URL)
+            
+            database_url = os.getenv("DATABASE_URL")
+            engine = create_engine(database_url)
             Base.metadata.create_all(engine)
             SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
             self.session = SessionLocal()

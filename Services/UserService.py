@@ -4,6 +4,7 @@ import random
 from typing import Self, List
 from datetime import datetime, timezone
 from Repository import DatabaseRepository
+import os
 
 class UserService:
 

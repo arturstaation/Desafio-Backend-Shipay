@@ -6,7 +6,8 @@ from Models.Base import Base
 
 
 def createTabels():
-    engine = create_engine("postgresql://postgres:123@localhost:5432/Teste")
+    database_url = os.getenv("DATABASE_URL")
+    engine = create_engine(database_url)
 
     package = "Models"
     for _, name, _ in pkgutil.iter_modules([package]):
