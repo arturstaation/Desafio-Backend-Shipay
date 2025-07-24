@@ -149,8 +149,8 @@ VALUES
 
 - Para testar, use o **Insomnia**, **Postman** ou qualquer ferramenta de requisições HTTP.
 
-1. Tentando criar usuario sem nome:
-Requisição: http://127.0.0.1:5000/user/
+1. Tentando criar usuario sem nome: <br>
+Requisição: http://127.0.0.1:5000/user/<br>
 Body:
 ```
 {
@@ -160,8 +160,8 @@ Body:
 ```
 Resultado:
 ![Resultado do Teste](testImages/teste1.png)
-2. Tentando criar usuario sem nome, email:
-Requisição: http://127.0.0.1:5000/user/
+2. Tentando criar usuario sem nome, email: <br>
+Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
 ```
 {
@@ -169,16 +169,16 @@ Body:
 }
 ```
 ![Resultado do Teste](testImages/teste2.png)
-3. Tentando criar usuario sem nome, email,roleId:
-Requisição: http://127.0.0.1:5000/user/
+3. Tentando criar usuario sem nome, email,roleId: <br>
+Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
 ```
 {
 }
 ```
 ![Resultado do Teste](testImages/teste3.png)
-4. Tentando criar usuario sem email,roleId:
-Requisição: http://127.0.0.1:5000/user/
+4. Tentando criar usuario sem email,roleId:<br>
+Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
 ```
 {
@@ -186,8 +186,8 @@ Body:
 }
 ```
 ![Resultado do Teste](testImages/teste4.png)
-5. Tentando criar usuario sem email:
-Requisição: http://127.0.0.1:5000/user/
+5. Tentando criar usuario sem email: <br>
+Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
 ```
 {
@@ -196,8 +196,8 @@ Body:
 }
 ```
 ![Resultado do Teste](testImages/teste5.png)
-6. Tentando criar usuario sem roleId:
-Requisição: http://127.0.0.1:5000/user/
+6. Tentando criar usuario sem roleId: <br>
+Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
 ```
 {
@@ -206,8 +206,8 @@ Body:
 }
 ```
 ![Resultado do Teste](testImages/teste6.png)
-7. Tentando criar usuario com nome vazio:
-Requisição: http://127.0.0.1:5000/user/
+7. Tentando criar usuario com nome vazio: <br>
+Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
 ```
 {
@@ -217,8 +217,8 @@ Body:
 }
 ```
 ![Resultado do Teste](testImages/teste7.png)
-8. Tentando criar usuario com email invalido:
-Requisição: http://127.0.0.1:5000/user/
+8. Tentando criar usuario com email invalido: <br>
+Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
 ```
 {
@@ -228,8 +228,8 @@ Body:
 }
 ```
 ![Resultado do Teste](testImages/teste8.png)
-9. Tentando criar usuario com roleId sem ser um numero:
-Requisição: http://127.0.0.1:5000/user/
+9. Tentando criar usuario com roleId sem ser um numero: <br>
+Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
 ```
 {
@@ -239,8 +239,8 @@ Body:
 }
 ```
 ![Resultado do Teste](testImages/teste9.png)
-10. Tentando criar usuario com roleId inexistente:
-Requisição: http://127.0.0.1:5000/user/
+10. Tentando criar usuario com roleId inexistente: <br>
+Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
 ```
 {
@@ -250,8 +250,8 @@ Body:
 }
 ```
 ![Resultado do Teste](testImages/teste10.png)
-11. Criando usuario com sucesso:
-Requisição: http://127.0.0.1:5000/user/
+11. Criando usuario com sucesso: <br>
+Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
 ```
 {
@@ -262,8 +262,8 @@ Body:
 ```
 ![Resultado do Teste](testImages/teste11.png)
 ![Resultado do Teste](testImages/teste11_2.png)
-12. Criando usuario com senha com sucesso:
-Requisição: http://127.0.0.1:5000/user/
+12. Criando usuario com senha com sucesso: <br>
+Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
 ```
 {
@@ -276,15 +276,15 @@ Body:
 ![Resultado do Teste](testImages/teste12.png)
 ![Resultado do Teste](testImages/teste12_2.png)
 
-13. Obtendo roles de um usuario existente:
-Requisição: http://127.0.0.1:5000/user/1/getRoles
+13. Obtendo roles de um usuario existente: <br>
+Requisição: http://127.0.0.1:5000/user/1/getRoles <br>
 ![Resultado do Teste](testImages/teste13.png)
 
-14. Tentando obter roles de um userId invalido:
-Requisição: http://127.0.0.1:5000/user/aaaaa/getRoles
+14. Tentando obter roles de um userId invalido:<br>
+Requisição: http://127.0.0.1:5000/user/aaaaa/getRoles <br>
 ![Resultado do Teste](testImages/teste14.png)
 
-15. Tentando obter roles de um userId inexistente:
-Requisição: http://127.0.0.1:5000/user/100/getRoles
+15. Tentando obter roles de um userId inexistente: <br>
+Requisição: http://127.0.0.1:5000/user/100/getRoles <br>
 ![Resultado do Teste](testImages/teste15.png)
 ---
