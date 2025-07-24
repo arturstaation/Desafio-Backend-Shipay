@@ -35,37 +35,38 @@ Body (JSON):
 ```
 Desafio-Backend-Shipay/
 │
-├── Controller/
+├── Controller/                # Camada de controle: define as rotas e lógica de entrada/saída HTTP
 │   ├── __init__.py
-│   └── UserController.py
+│   └── UserController.py      # Endpoints relacionados a usuários
 │
-├── Models/
+├── Models/                   # Modelos de dados usados pela aplicação
 │   ├── __init__.py
-│   ├── Base.py
-│   ├── Claim.py
-│   ├── RequestResponse.py
-│   ├── Role.py
-│   ├── User.py
-│   └── UserClaim.py
+│   ├── Base.py               # Classe base para os modelos ORM
+│   ├── Claim.py              # Modelo de permissão/claim
+│   ├── RequestResponse.py    # Estrutura padrão de resposta da API
+│   ├── Role.py               # Modelo de função/cargo de usuário
+│   ├── User.py               # Modelo de usuário
+│   └── UserClaim.py          # Associação entre usuários e claims
 │
-├── Repository/
+├── Repository/               # Acesso ao banco de dados
 │   ├── __init__.py
-│   └── DatabaseRepository.py
+│   └── DatabaseRepository.py # Funções de CRUD e queries
 │
-├── Services/
+├── Services/                 # Camada de regras de negócio
 │   ├── __init__.py
-│   └── UserService.py
+│   └── UserService.py        # Lógica de negócio para operações de usuário
 │
-├── Utils/
+├── Utils/                    # Utilitários auxiliares
 │   ├── __init__.py
-│   ├── Logger.py
-│   └── StartDataBase.py
+│   ├── Logger.py             # Configuração de logging da aplicação
+│   └── StartDataBase.py      # Inicialização do banco e criação das tabelas
 │
-├── main.py
-├── requirements.txt
-├── .gitignore
-├── .env
-└── README.md
+├── main.py                   # Arquivo principal para execução da aplicação Flask
+├── requirements.txt          # Lista de dependências do projeto
+├── .gitignore                # Arquivos/pastas ignoradas pelo Git
+├── app.log                   # Arquivo de log gerado pela aplicação
+├── .env                      # Variáveis de ambiente (configurações sensíveis)
+└── README.md                 # Documentação do projeto
 ```
 
 ---
