@@ -92,7 +92,7 @@ def getRolesByUserId(userId):
         if(len(roles) == 0):  
             msg = f"Usuario {userId} não encontrado!"
             logger.info(msg)
-            return jsonify(asdict(RequestResponse(message=msg, data={"roles" : roles}))), 404
+            return jsonify(asdict(RequestResponse(message=msg))), 404
         return jsonify(asdict(RequestResponse(message=f"Roles do usuario {userId} encontrados!", data={"roles" : roles}))), 200
     except Exception as e:
         

@@ -134,11 +134,157 @@ python main.py
 ## 📌 Observações
 
 - As tabelas são criadas automaticamente com base nos modelos definidos em `Models/`.
-- Antes de realizar os testes, foi populada a tabela `roles` , ja que a tabela `users` usa uma chave estrangeira da tabela anterior. Exemplos:
+- Antes de realizar os testes, foi populada a tabela `roles` , ja que a tabela `users` usa uma chave estrangeira da tabela anterior. 
+Exemplos:
+```
+INSERT INTO roles (id, description)
+VALUES
+  (1, 'Dono'),
+  (2, 'Gerente'),
+  (3, 'Funcionário');
+```
 ---
 
 ## 🧪 Testes
 
 - Para testar, use o **Insomnia**, **Postman** ou qualquer ferramenta de requisições HTTP.
 
+1. Tentando criar usuario sem nome:
+Requisição: http://127.0.0.1:5000/user/
+Body:
+```
+{
+	"email" : "testedono@empresa.com",
+	"roleId" : "1"
+}
+```
+Resultado:
+![Resultado do Teste](testImages/teste1.png)
+2. Tentando criar usuario sem nome, email:
+Requisição: http://127.0.0.1:5000/user/
+Body:
+```
+{
+	"roleId" : "1"
+}
+```
+![Resultado do Teste](testImages/teste2.png)
+3. Tentando criar usuario sem nome, email,roleId:
+Requisição: http://127.0.0.1:5000/user/
+Body:
+```
+{
+}
+```
+![Resultado do Teste](testImages/teste3.png)
+4. Tentando criar usuario sem email,roleId:
+Requisição: http://127.0.0.1:5000/user/
+Body:
+```
+{
+    "name" : "Teste",
+}
+```
+![Resultado do Teste](testImages/teste4.png)
+5. Tentando criar usuario sem email:
+Requisição: http://127.0.0.1:5000/user/
+Body:
+```
+{
+    "name" : "Teste",
+    "roleId": 1
+}
+```
+![Resultado do Teste](testImages/teste5.png)
+6. Tentando criar usuario sem roleId:
+Requisição: http://127.0.0.1:5000/user/
+Body:
+```
+{
+    "name" : "Teste",
+    "email": "testedono@gmail.com"
+}
+```
+![Resultado do Teste](testImages/teste6.png)
+7. Tentando criar usuario com nome vazio:
+Requisição: http://127.0.0.1:5000/user/
+Body:
+```
+{
+    "name" : "",
+    "email": "testedono@gmail.com",
+    "roleId": 1
+}
+```
+![Resultado do Teste](testImages/teste7.png)
+8. Tentando criar usuario com email invalido:
+Requisição: http://127.0.0.1:5000/user/
+Body:
+```
+{
+    "name" : "Joao",
+    "email": "teste",
+    "roleId": 1
+}
+```
+![Resultado do Teste](testImages/teste8.png)
+9. Tentando criar usuario com roleId sem ser um numero:
+Requisição: http://127.0.0.1:5000/user/
+Body:
+```
+{
+    "name" : "Joao",
+    "email": "testedono@gmail.com",
+    "roleId": "a"
+}
+```
+![Resultado do Teste](testImages/teste9.png)
+10. Tentando criar usuario com roleId inexistente:
+Requisição: http://127.0.0.1:5000/user/
+Body:
+```
+{
+    "name" : "Joao",
+    "email": "testedono@gmail.com",
+    "roleId": 10
+}
+```
+![Resultado do Teste](testImages/teste10.png)
+11. Criando usuario com sucesso:
+Requisição: http://127.0.0.1:5000/user/
+Body:
+```
+{
+    "name" : "Joao",
+    "email": "testedono@gmail.com",
+    "roleId": 1
+}
+```
+![Resultado do Teste](testImages/teste11.png)
+![Resultado do Teste](testImages/teste11_2.png)
+12. Criando usuario com senha com sucesso:
+Requisição: http://127.0.0.1:5000/user/
+Body:
+```
+{
+    "name" : "Joao",
+    "email": "testedono@gmail.com",
+    "roleId": 1,
+    "password" : "teste"
+}
+```
+![Resultado do Teste](testImages/teste12.png)
+![Resultado do Teste](testImages/teste12_2.png)
+
+13. Obtendo roles de um usuario existente:
+Requisição: http://127.0.0.1:5000/user/1/getRoles
+![Resultado do Teste](testImages/teste13.png)
+
+14. Tentando obter roles de um userId invalido:
+Requisição: http://127.0.0.1:5000/user/aaaaa/getRoles
+![Resultado do Teste](testImages/teste14.png)
+
+15. Tentando obter roles de um userId inexistente:
+Requisição: http://127.0.0.1:5000/user/100/getRoles
+![Resultado do Teste](testImages/teste15.png)
 ---
