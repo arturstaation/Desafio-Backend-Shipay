@@ -98,7 +98,7 @@ Desafio-Backend-Shipay/
 ### 2. Configurar o Ambiente Python
 
 1. Clone o projeto usando a linha de comando
-```
+```bash
 git clone https://github.com/arturstaation/Desafio-Backend-Shipay.git
 ```
 
