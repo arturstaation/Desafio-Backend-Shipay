@@ -8,5 +8,6 @@ app.register_blueprint(user_bp, url_prefix="/user")
 
 
 if __name__ == "__main__":
+    load_dotenv()
     createTabels()
     app.run()
