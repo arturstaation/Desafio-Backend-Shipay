@@ -140,7 +140,7 @@ python main.py
 - As tabelas são criadas automaticamente com base nos modelos definidos em `Models/`.
 - Antes de realizar os testes, foi populada a tabela `roles` , ja que a tabela `users` usa uma chave estrangeira da tabela anterior. 
 Exemplos:
-```
+```SQL
 INSERT INTO roles (id, description)
 VALUES
   (1, 'Dono'),
@@ -156,7 +156,7 @@ VALUES
 1. Tentando criar usuario sem nome: <br>
 Requisição: http://127.0.0.1:5000/user/<br>
 Body:
-```
+```json
 {
 	"email" : "testedono@empresa.com",
 	"roleId" : "1"
@@ -167,7 +167,7 @@ Resultado:
 2. Tentando criar usuario sem nome, email: <br>
 Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
-```
+```json
 {
 	"roleId" : "1"
 }
@@ -176,7 +176,7 @@ Body:
 3. Tentando criar usuario sem nome, email,roleId: <br>
 Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
-```
+```json
 {
 }
 ```
@@ -184,7 +184,7 @@ Body:
 4. Tentando criar usuario sem email,roleId:<br>
 Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
-```
+```json
 {
     "name" : "Teste",
 }
@@ -193,7 +193,7 @@ Body:
 5. Tentando criar usuario sem email: <br>
 Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
-```
+```json
 {
     "name" : "Teste",
     "roleId": 1
@@ -203,7 +203,7 @@ Body:
 6. Tentando criar usuario sem roleId: <br>
 Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
-```
+```json
 {
     "name" : "Teste",
     "email": "testedono@gmail.com"
@@ -213,7 +213,7 @@ Body:
 7. Tentando criar usuario com nome vazio: <br>
 Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
-```
+```json
 {
     "name" : "",
     "email": "testedono@gmail.com",
@@ -224,7 +224,7 @@ Body:
 8. Tentando criar usuario com email invalido: <br>
 Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
-```
+```json
 {
     "name" : "Joao",
     "email": "teste",
@@ -235,7 +235,7 @@ Body:
 9. Tentando criar usuario com roleId sem ser um numero: <br>
 Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
-```
+```json
 {
     "name" : "Joao",
     "email": "testedono@gmail.com",
@@ -246,7 +246,7 @@ Body:
 10. Tentando criar usuario com roleId inexistente: <br>
 Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
-```
+```json
 {
     "name" : "Joao",
     "email": "testedono@gmail.com",
@@ -257,7 +257,7 @@ Body:
 11. Criando usuario com sucesso: <br>
 Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
-```
+```json
 {
     "name" : "Joao",
     "email": "testedono@gmail.com",
@@ -269,7 +269,7 @@ Body:
 12. Criando usuario com senha com sucesso: <br>
 Requisição: http://127.0.0.1:5000/user/ <br>
 Body:
-```
+```json
 {
     "name" : "Joao",
     "email": "testedono@gmail.com",
