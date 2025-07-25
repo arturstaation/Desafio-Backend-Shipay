@@ -80,17 +80,17 @@ Desafio-Backend-Shipay/
 
 1. Baixe o PostgreSQL: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads  
 2. Siga o instalador padrão e **anote sua senha e porta escolhidas**.
-2.1 Na pagina "Setup - PostgresSQL", clique em "Next"
-2.2 Na pagina "Installation Directory", escolha o que mais te agrade, ou mantenha o padrão, então clique em "Next"
-2.3 Na pagina "Select Components", não mude nada e clique em Next"
-2.5 Na pagina "Data Directory", scolha o que mais te agrade, ou mantenha o padrão, então 
-2.5 Na pagina "Password", digite a senha que gostaria para que seu usuario possa acessar o bannco. **IMPORTANTE: Guarde essa senha, pois vamos usalá mais tarde**
-2.6 Na pagina "Port", escolha a porta que gostaria que o Postgres usasse, ou mantenha a padrão (5432), então clique em "Next" **IMPORTANTE: Guarde essa senha, pois vamos usalá mais tarde**
-2.7 Na pagina "Advanced Options" clique em "Next"
-2.8 Na pagina "Pre Installation Summary" clique em ""Next"
-2.9 Na pagina "Ready to Install" clique em "Next"
-2.10 Aguarde a instalação finalizar
-2.11 Na pagina "Completing the PostgresSQL Setup Wizard", pode desmarcar o radio e então clicar em "Finish"
+    2.1 Na pagina "Setup - PostgresSQL", clique em "Next"<br>
+    2.2 Na pagina "Installation Directory", escolha o que mais te agrade, ou mantenha o padrão, então clique em "Next"<br>
+    2.3 Na pagina "Select Components", não mude nada e clique em Next"<br>
+    2.4 Na pagina "Data Directory", scolha o que mais te agrade, ou mantenha o padrão, então <br>
+    2.5 Na pagina "Password", digite a senha que gostaria para que seu usuario possa acessar o bannco. **IMPORTANTE: Guarde essa senha, pois vamos usalá mais tarde**
+    2.6 Na pagina "Port", escolha a porta que gostaria que o Postgres usasse, ou mantenha a padrão (5432), então clique em "Next" **IMPORTANTE: Guarde essa senha, pois vamos usalá mais tarde**<br>
+    2.7 Na pagina "Advanced Options" clique em "Next"<br>
+    2.8 Na pagina "Pre Installation Summary" clique em ""Next"<br>
+    2.9 Na pagina "Ready to Install" clique em "Next"<br>
+    2.10 Aguarde a instalação finalizar<br>
+    2.11 Na pagina "Completing the PostgresSQL Setup Wizard", pode desmarcar o radio e então clicar em "Finish"<br>
 3. Você pode usar o banco `postgres` padrão ou criar um novo.
 
 📺 *Dica*: [Veja esse vídeo passo-a-passo](https://www.youtube.com/watch?v=4qH-7w5LZsA)
