@@ -6,17 +6,17 @@ def getLogger(name: str) -> logging.Logger:
     if not logger.handlers:
         logger.setLevel(logging.DEBUG)
 
-        ch = logging.StreamHandler()
-        ch.setLevel(logging.DEBUG)
+        consoleHandler = logging.StreamHandler()
+        consoleHandler.setLevel(logging.DEBUG)
 
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        ch.setFormatter(formatter)
+        consoleHandler.setFormatter(formatter)
 
-        fh = logging.FileHandler('app.log')
-        fh.setLevel(logging.INFO)
-        fh.setFormatter(formatter)
+        fileHandler = logging.FileHandler('app.log')
+        fileHandler.setLevel(logging.INFO)
+        fileHandler.setFormatter(formatter)
 
-        logger.addHandler(fh)
-        logger.addHandler(ch)
+        logger.addHandler(fileHandler)
+        logger.addHandler(consoleHandler)
 
     return logger
