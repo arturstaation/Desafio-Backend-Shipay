@@ -79,7 +79,7 @@ Desafio-Backend-Shipay/
 ### 1. Configurar Banco de Dados PostgreSQL
 
 1. Baixe o PostgreSQL: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads  
-2. Siga o instalador padrão e **anote sua senha e porta escolhidas**.
+2. Siga o instalador padrão e **anote sua senha e porta escolhidas**.<br>
     2.1 Na pagina "Setup - PostgresSQL", clique em "Next"<br>
     2.2 Na pagina "Installation Directory", escolha o que mais te agrade, ou mantenha o padrão, então clique em "Next"<br>
     2.3 Na pagina "Select Components", não mude nada e clique em Next"<br>
