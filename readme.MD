@@ -39,11 +39,10 @@ Desafio-Backend-Shipay/
 │   ├── __init__.py
 │   └── UserController.py      # Endpoints relacionados a usuários
 │
-├── Models/                   # Modelos de dados usados pela aplicação
+├── Models/                   # Define os modelos do banco de dados (SQLAlchemy)
 │   ├── __init__.py
 │   ├── Base.py               # Classe base para os modelos ORM
 │   ├── Claim.py              # Modelo de permissão/claim
-│   ├── RequestResponse.py    # Estrutura padrão de resposta da API
 │   ├── Role.py               # Modelo de função/cargo de usuário
 │   ├── User.py               # Modelo de usuário
 │   └── UserClaim.py          # Associação entre usuários e claims
@@ -51,6 +50,10 @@ Desafio-Backend-Shipay/
 ├── Repository/               # Acesso ao banco de dados
 │   ├── __init__.py
 │   └── DatabaseRepository.py # Funções de CRUD e queries
+
+├── Schemas/               # Define os objetos usados para entrada e saída de dados
+│   ├── __init__.py
+│   └── RequestResponse.py    # Estrutura padrão de resposta da APIpy # Funções de CRUD e queries
 │
 ├── Services/                 # Camada de regras de negócio
 │   ├── __init__.py

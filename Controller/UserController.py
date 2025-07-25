@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
-from Models import RequestResponse, User
+from Models import User
+from Schemas import RequestResponse
 from dataclasses import asdict
 from Services import UserService
 import re

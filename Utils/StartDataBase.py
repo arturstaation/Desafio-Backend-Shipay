@@ -4,6 +4,7 @@ import pkgutil
 from sqlalchemy import create_engine
 from Models.Base import Base
 from .Logger import getLogger
+import traceback
 
 logger = getLogger(__name__)
 
@@ -23,5 +24,6 @@ def createTabels():
         logger.debug("Criando tableas inexistentes")
         Base.metadata.create_all(engine)
     except Exception as e:
-        logger.error(f"Erro ao validar e criar tabelas mapeadas. Erro {str(e)}. Stacktrace:")
+        stacktrace = traceback.format_exc() 
+        logger.error(f"Erro ao validar e criar tabelas mapeadas. Erro {str(e)}. Stacktrace: {stacktrace}")
         os._exit(0)
