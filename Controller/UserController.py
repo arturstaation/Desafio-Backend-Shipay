@@ -13,7 +13,13 @@ logger = getLogger(__name__)
 @user_bp.route('/', methods=['POST'])
 def createUser():
     logger.info("Requisição para criar usuario recebida")
-    userData = request.get_json()  
+    try:
+        userData = request.get_json()  
+    except Exception as e:
+        stacktrace = traceback.format_exc() 
+        logger.error(f"Erro ao tentar converter JSON do body. Erro: {str(e)}. Stacktrace: {stacktrace}")
+        return jsonify(asdict(RequestResponse(hasError=True, message=f"JSON fornecido no body é invalido!", statusCode=404))),404
+
     requiredFields = ["name", "email", "roleId"]
     logger.info(f"Validando existencia dos campos {', '.join(requiredFields)}")
     missingFields = [field for field in requiredFields if field not in userData]
